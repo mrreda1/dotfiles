@@ -1,0 +1,69 @@
+backend = "glx";
+glx-no-stencil = true;
+glx-copy-from-front = false;
+
+# Opacity
+active-opacity = 1;
+inactive-opacity = 1;
+frame-opacity = 1;
+inactive-opacity-override = false;
+blur-background = true;
+blur-background-exclude = [
+];
+
+blur-method = "dual_kawase";
+blur-strength = 6;
+
+# Fading
+fading = true;
+fade-delta = 8;
+no-fading-openclose = false;
+
+fade-exclude = [ ];
+
+opacity-rule = [
+	"95:class_g = 'Alacritty' && focused",
+	"80:class_g = 'Alacritty' && !focused",
+	"95:class_g = 'Nemo'",
+	"95:class_g = 'Zathura'",
+];
+
+# Rounded corners
+corner-radius = 6
+
+
+# Exclude conditions for rounded corners.
+rounded-corners-exclude = [
+  "window_type = 'desktop'"
+];
+
+# Shadows
+shadow = true;
+shadow-radius = 10;
+shadow-opacity = 0.1;
+shadow-offset-x = -5;
+shadow-offset-y = -5;
+
+shadow-exclude = [
+	"! name~=''",
+	"name = 'dock'",
+	"name = 'desktop'"
+]
+
+# Other
+mark-wmwin-focused = true;
+mark-overdir-focused = true;
+detect-rounded-corners = true;
+detect-client-opacity = true;
+refresh-rate = 0;
+vsync = true;
+dbe = false;
+
+# Window type settings
+wintypes:
+{
+	dock = {
+	    shadow = true;
+	    shadow-opacity = 0.1;
+	};
+};
