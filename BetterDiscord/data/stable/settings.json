@@ -1,6 +1,6 @@
 {
     "general": {
-        "voiceDisconnect": true,
+        "voiceDisconnect": false,
         "showToasts": true,
         "mediaKeys": false
     },
@@ -28,10 +28,10 @@
     },
     "developer": {
         "debugLogs": false,
-        "devTools": false,
-        "debuggerHotkey": false,
+        "devTools": true,
+        "debuggerHotkey": true,
         "reactDevTools": false,
-        "inspectElement": false,
-        "devToolsWarning": false
+        "inspectElement": true,
+        "devToolsWarning": true
     }
 }

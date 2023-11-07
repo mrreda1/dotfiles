@@ -1,12 +1,15 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-feh --bg-fill ~/wallpapers/alien.jpg
+feh --bg-fill ~/wallpapers/wall.jpg
+xsetroot -cursor_name left_ptr
 ~/.config/polybar/launch.sh &
 kdeconnect-indicator &
 picom &
 dunst &
 copyq &
+~/.config/bspwm/packages_update &
+
 setxkbmap -option grp:win_space_toggle us,ara &
 redshift -P -m randr -l 30:31.2 -t 6500:5000 &
 xrandr --rate 165

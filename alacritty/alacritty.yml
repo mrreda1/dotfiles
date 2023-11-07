@@ -1,3 +1,6 @@
+key_bindings:
+  - { key: Return,   mods: Super|Shift, action: SpawnNewInstance }
+
 window:
     opacity: 0.9
     decorations: none
@@ -33,3 +36,7 @@ colors:
   indexed_colors:
     - { index: 16, color: '0xff9e64' }
     - { index: 17, color: '0xdb4b4b' }
+font:
+  normal:
+    family: Fira Code
+    style: Regular

@@ -1,6 +1,11 @@
 #
 # wm independent hotkeys
 #
+# Take a screenshot
+super + Print
+	scrot '%Y-%m-%d_%H:%M:%S.png' -e 'mv $f ~/Downloads/images/screenshots/'
+super + shift + Print
+	prtsc &
 # Send clipboard
 super + alt + v
 	kdeconnect-cli -d 5e476c6e_c6d0_4d18_990c_0c899e514eb6 --send-clipboard
@@ -8,12 +13,15 @@ super + alt + v
 super + shift + n
 	surf https://shared02.opsone-cloud.ch/
 
+# emoji-keyboard
+super + shift + grave
+	emoji-keyboard &
 # Minimize apps
 super + {_,shift + }u
 	bspc {desktop -f, node -d} ^11
 # Lock Screen
 super + shift + q
-	betterlockscreen -l dimblur
+	betterlockscreen -l dimblur --show-layout 
 # Mic Toggle
 super + shift + m
 	~/./mictoggle.sh
@@ -56,7 +64,9 @@ XF86Audio{Next,Prev,Play}
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
-
+# poweroff
+super + {_,shift + } End
+	sudo {poweroff,reboot}
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}

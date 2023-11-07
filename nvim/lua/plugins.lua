@@ -4,6 +4,9 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
+	-- SQL
+	-- use 'kristijanhusak/vim-dadbod-ui.nvim'
+
 	-- tabline
 	use 'akinsho/bufferline.nvim'
 	require('bufferline').setup{
@@ -11,6 +14,8 @@ return require('packer').startup(function(use)
 		},
 	}
 
+	-- Ale
+	use 'dense-analysis/ale'
 	-- Telescope
 	use {
 		'nvim-telescope/telescope.nvim',
@@ -40,12 +45,14 @@ return require('packer').startup(function(use)
 		'folke/trouble.nvim',
 		requires = { {'nvim-tree/nvim-web-devicons'} }
 	}
+
 	-- Live server
 	use('barrett-ruth/live-server.nvim')
 	require('live-server').setup()
 
 	-- Color picker
 	use('KabbAmine/vCoolor.vim')
+
 	-- Detect tabstop and shiftwidth automatically
 	use('tpope/vim-sleuth')
 
@@ -55,12 +62,16 @@ return require('packer').startup(function(use)
 	-- blank lines
 	use('lukas-reineke/indent-blankline.nvim')
 
-	require('indent_blankline').setup {
-		char = '┊',
-		show_trailing_blankline_indent = false,
+	require('ibl').setup {
+		indent = {
+			char = '┊',
+		},
+		whitespace = {
+			remove_blankline_trail = false,
+		},
 	}
 
-	-- Comment with "gc" 
+	-- Comment with "gc"
 	use 'numToStr/Comment.nvim'
 	require('Comment').setup()
 
