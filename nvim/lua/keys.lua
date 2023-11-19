@@ -1,8 +1,13 @@
 vim.g.mapleader = " "
 
+-- lsp go to declaration and definition
+vim.keymap.set('n', '<leader>gf', ":lua vim.lsp.buf.definition()<CR>")
+vim.keymap.set('n', '<leader>gd', ":lua vim.lsp.buf.declaration()<CR>")
+
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
