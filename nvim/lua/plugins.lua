@@ -4,6 +4,8 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
+	use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+
 	-- SQL
 	-- use 'kristijanhusak/vim-dadbod-ui.nvim'
 
@@ -12,6 +14,11 @@ return require('packer').startup(function(use)
 	require('bufferline').setup{
 		options = {
 		},
+	}
+	-- coc
+	use {
+		'neoclide/coc.nvim',
+		branch = 'release'
 	}
 
 	-- Ale
@@ -85,6 +92,8 @@ return require('packer').startup(function(use)
 	use 'andweeb/presence.nvim'
 	require("presence").setup({
 		main_image = "file",
+		neovim_image_text   = "I use arch btw ._.",
+		-- blacklist = {'c', 'h'}
 	})
 
 	-- Tokyonight theme
@@ -174,6 +183,13 @@ return require('packer').startup(function(use)
 			}
 		}
 	})
+	require'lspconfig'.sqlls.setup{
+		filetypes = { 'sql' },
+		root_dir = function(_)
+			return vim.loop.cwd()
+		end,
+	}
+
 
 	local lsp = require('lsp-zero').preset({
 		name = 'minimal',

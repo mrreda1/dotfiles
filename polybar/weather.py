@@ -7,6 +7,7 @@ API_KEY = "8c96e8866f0c99858c86eba61dcb8c6b"
 UNITS = "metric"
 UNIT_KEY = "C"
 LANG = "en"
+
 try:
     REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&lang={}&appid={}&units={}".format(CITY, LANG,  API_KEY, UNITS))
     try:

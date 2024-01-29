@@ -10,7 +10,6 @@ dunst &
 copyq &
 ~/.config/bspwm/packages_update &
 
-setxkbmap -option grp:win_space_toggle us,ara &
 redshift -P -m randr -l 30:31.2 -t 6500:5000 &
 xrandr --rate 165
 

@@ -36,7 +36,9 @@ def contests_list(apiKey, secret):
         if (contest["phase"] == "BEFORE"):
             next = -contest["relativeTimeSeconds"]
         elif (contest["phase"] == "CODING"):
-            remain = contest["durationSeconds"] - contest["relativeTimeSeconds"]
+            remain = contest["durationSeconds"]-contest["relativeTimeSeconds"]
+            if (remain/(60*60) > 10):
+                continue
             print(f"{int(remain/(60*60)):02d}:{int(remain%(60*60)/60):02d}")
             return
     print(f"{int(next/(60*60*24)):02d}:"

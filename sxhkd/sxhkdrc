@@ -2,8 +2,10 @@
 # wm independent hotkeys
 #
 # Take a screenshot
+super + shift + i
+	winhide
 super + Print
-	scrot '%Y-%m-%d_%H:%M:%S.png' -e 'mv $f ~/Downloads/images/screenshots/'
+	scrot '%Y-%m-%d_%H:%M:%S.png' -e 'mv $f ~/Downloads/Images/screenshots/'
 super + shift + Print
 	prtsc &
 # Send clipboard
@@ -51,11 +53,17 @@ super + Escape
 XF86MonBrightness{Up,Down}
 	xbacklight -{inc,dec} 10
 XF86Audio{Lower,Raise}Volume
-	amixer -D default sset Master 5%{-,+}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 XF86AudioMute
-	amixer -D default sset toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86Audio{Next,Prev,Play}
 	playerctl {next,previous,play-pause}
+XF86Calculator
+	speedcrunch &
+XF86Tools
+	spotify &
+XF86Explorer
+	discord &
 
 #
 # bspwm hotkeys

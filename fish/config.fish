@@ -36,5 +36,6 @@ if status is-interactive
        set -g fish_pager_color_selected_background --background=$selection
 end
 set fish_greeting
+set -g fish_key_bindings fish_vi_key_bindings
 
 fish_add_path /home/mohamed/.spicetify

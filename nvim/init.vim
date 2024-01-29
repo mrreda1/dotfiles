@@ -2,7 +2,7 @@ lua require("plugins")
 lua require("treesitter")
 lua require("keys")
 
-set ts=4 sw=4
+set ts=2 sw=2
 
 nnoremap <leader>e <cmd>TroubleToggle<cr>
 nnoremap <C-t> :Neotree toggle<CR>
