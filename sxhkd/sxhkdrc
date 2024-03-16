@@ -38,7 +38,7 @@ super + z
 	surf www.google.com
 # terminal emulator
 super + Return
-	alacritty
+	kitty 
 
 # program launcher
 super + d

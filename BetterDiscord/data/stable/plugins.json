@@ -1,4 +1,4 @@
 {
-    "ZeresPluginLibrary": false,
-    "BetterAnimations": false
+    "ZeresPluginLibrary": true,
+    "BetterAnimations": true
 }
