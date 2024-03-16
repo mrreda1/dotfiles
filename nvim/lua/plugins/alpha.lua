@@ -62,15 +62,15 @@ local function layout()
     ---@return table
     lazycache.menu = function()
         return {
-            button("SPC t o", "󰈢  Recently opened files"),
-            button("SPC t f", "  Find file"),
-            button("SPC t l", "  Find word"),
-            button("SPC t F", "  File browser"),
-            button("SPC t 1", "  Find repo"),
-            button("SPC t s", "  Open session"),
             button("n", "  New file", "<Cmd>ene<CR>"),
-            button("p", "󰂖  Plugins", "<Cmd>Lazy<CR>"),
-            button("q", "󰅚  Quit", "<Cmd>qa<CR>"),
+            button("o", "󰊪  File Explorer", ":Neotree float<CR>"),
+            button("f", "  Find File", ":Telescope find_files<CR>"),
+            button("s", "  Saved Sessions", ":SessionManager load_session<CR>"),
+            button("c", "󰑴  Coding Stuff", ":cd ~/code<CR>:Neotree float<CR>"),
+            button("e", "  Edit Neovim", ":cd ~/.config/nvim<CR>:Neotree float<CR>"),
+            button("u", "󰂖  Update plugins", ":Lazy update<CR>"),
+            button("m", "󱌣  Mason", ":Mason<CR>"),
+            button("q", "  Quit", ":q<CR>"),
         }
     end
 
@@ -108,7 +108,7 @@ local function layout()
     local header_color = "Identifier" .. math.random(11)
 
     return {
-        { type = "padding", val = 4 },
+        { type = "padding", val = 2 },
         {
             type = "text",
             val = {
