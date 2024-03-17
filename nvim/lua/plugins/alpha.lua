@@ -81,6 +81,7 @@ local function layout()
             if vim.loop.fs_stat(filename) ~= nil then
                 local icon, hl = require("nvim-web-devicons").get_icon(filename, vim.fn.fnamemodify(filename, ":e"))
                 local filename_short = string.sub(vim.fn.fnamemodify(filename, ":t"), 1, 30)
+
                 table.insert(
                     result,
                     button(
@@ -88,9 +89,10 @@ local function layout()
                         string.format("%s  %s", icon, filename_short),
                         string.format("<Cmd>e %s<CR>", filename),
                         nil,
-                        { hl = { { hl, 0, 3 }, { "Normal", 5, #filename_short + 5 } } }
+                        { hl = { { tostring(hl), 0, 3 }, { "Normal", 5, #filename_short + 5 } } }
                     )
                 )
+
                 if #result == 9 then
                     break
                 end
@@ -108,7 +110,7 @@ local function layout()
     local header_color = "Identifier" .. math.random(11)
 
     return {
-        { type = "padding", val = 2 },
+        { type = "padding", val = 3 },
         {
             type = "text",
             val = {

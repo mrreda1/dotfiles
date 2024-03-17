@@ -17,5 +17,11 @@ return {
         vim.keymap.set('n', '<C-9>', ':BufferMovePrevious<CR>',
             { silent = true, desc = "Tabs -> Move tab to the left" }),
         vim.keymap.set('n', '<C-0>', ':BufferMoveNext<CR>', { silent = true, desc = "Tabs -> Move tab to the right" }),
+    },
+    {
+        "petertriho/nvim-scrollbar",
+        config = function ()
+            require("scrollbar").setup()
+        end
     }
 }
