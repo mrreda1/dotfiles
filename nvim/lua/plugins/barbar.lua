@@ -14,14 +14,14 @@ return {
         vim.keymap.set('n', '<Del>', ':BufferClose<CR>', { silent = true, desc = "Tabs -> Buffer Tab :q" }),
         vim.keymap.set('n', '<S-Del>', ':BufferClose!<CR>', { silent = true, desc = "Tabs -> Buffer Tab :q!" }),
         -- Move Tabs
-        vim.keymap.set('n', '<C-9>', ':BufferMovePrevious<CR>',
+        vim.keymap.set('n', '<C-S-[>', ':BufferMovePrevious<CR>',
             { silent = true, desc = "Tabs -> Move tab to the left" }),
-        vim.keymap.set('n', '<C-0>', ':BufferMoveNext<CR>', { silent = true, desc = "Tabs -> Move tab to the right" }),
+        vim.keymap.set('n', '<C-S-]>', ':BufferMoveNext<CR>', { silent = true, desc = "Tabs -> Move tab to the right" }),
     },
     {
         "petertriho/nvim-scrollbar",
-        config = function ()
+        config = function()
             require("scrollbar").setup()
         end
-    }
+    },
 }

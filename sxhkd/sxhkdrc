@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 # Take a screenshot
+
+super + shift + p
+    zathura ~/code/php/Complete\ Modern\ PHP\ Developer\ Course\ in\ 2023/1.\ Introduction/2.1\ Modern\ PHP\ Developer\ -\ Lecture\ Notes.pdf
+
 super + shift + i
 	winhide
 super + Print
@@ -14,6 +18,8 @@ super + alt + v
 # NextCloud server
 super + shift + n
 	surf https://shared02.opsone-cloud.ch/
+super + n
+    sudo nginx -s reload
 
 # emoji-keyboard
 super + shift + grave
@@ -38,7 +44,7 @@ super + z
 	surf www.google.com
 # terminal emulator
 super + Return
-	kitty 
+    alacritty -o font.size=14
 
 # program launcher
 super + d

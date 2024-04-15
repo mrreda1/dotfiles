@@ -32,4 +32,7 @@ return {
         opts = {
         },
     },
+    {
+        'mg979/vim-visual-multi'
+    },
 }

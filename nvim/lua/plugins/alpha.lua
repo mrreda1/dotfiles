@@ -110,7 +110,7 @@ local function layout()
     local header_color = "Identifier" .. math.random(11)
 
     return {
-        { type = "padding", val = 3 },
+        { type = "padding", val = 2 },
         {
             type = "text",
             val = {
@@ -123,7 +123,6 @@ local function layout()
                 " ▒ ░▒░    ▒   ▒▒ ░░  ░      ░░  ░      ░ ▒ ░░ ░▒ ▒░ ▒   ▒▒ ░",
                 " ░ ░ ░    ░   ▒   ░      ░   ░      ░    ▒ ░░ ░░ ░  ░   ▒   ",
                 " ░   ░        ░  ░       ░          ░    ░  ░  ░        ░  ░",
-
             },
             opts = { hl = header_color, position = "center" },
         },

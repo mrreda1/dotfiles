@@ -1,7 +1,8 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-feh --bg-fill ~/wallpapers/wall.jpg
+feh --bg-fill ~/wallpapers/ign-waifu.png
+# feh --bg-scale ~/Pictures/abdelrehem.jpg
 xsetroot -cursor_name left_ptr
 ~/.config/polybar/launch.sh &
 kdeconnect-indicator &
@@ -11,7 +12,6 @@ copyq &
 ~/.config/bspwm/packages_update &
 
 redshift -P -m randr -l 30:31.2 -t 6500:5000 &
-xrandr --rate 165
 
 bspc monitor -d         
 

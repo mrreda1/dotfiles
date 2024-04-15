@@ -1,0 +1,369 @@
+{
+	"all": {
+		"choices": {
+			"activities-rocket-time": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"activity_end": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"activity_launch": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"activity_user_join": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"activity_user_left": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"call_calling": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": null,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"call_ringing": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": null,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"call_ringing_halloween": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": null,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"call_ringing_snowsgiving": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": null,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"clip_error": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"clip_save": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"deafen": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"disconnect": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"hang_status_select": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"highfive_clap": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"highfive_whistle": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"ddr-down": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"ddr-left": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"ddr-right": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"ddr-up": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"reconnect": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"message1": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"message3": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"dm": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"groupdm": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"mentioned": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"everyone": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"here": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"reply": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"role": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": true,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"mute": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"ptt_start": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"ptt_stop": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"stage_waiting": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"stream_ended": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"stream_started": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"stream_user_joined": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"stream_user_left": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"success": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"undeafen": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"unmute": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"vibing_wumpus": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"user_join": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"user_leave": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"user_moved": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			}
+		},
+		"volumes": {
+			"globalVolume": 100
+		}
+	}
+}
