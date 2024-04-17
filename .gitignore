@@ -17,6 +17,8 @@
 !fish/**
 !gdb/
 !gdb/**
+!qt5ct/
+!qt5ct/**
 !gtk*/
 !gtk*/**
 !htop/
@@ -25,6 +27,9 @@
 !picom/**
 !polybar/
 !polybar/**
+polybar/requests
+polybar/pip
+polybar/install
 !ranger/
 !ranger/**
 !rofi/
