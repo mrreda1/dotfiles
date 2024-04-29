@@ -1,11 +1,10 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-feh --bg-fill ~/wallpapers/ign-waifu.png
-# feh --bg-scale ~/Pictures/abdelrehem.jpg
+feh --bg-fill ~/wallpapers/pc_wallpapers/rwall.png
 xsetroot -cursor_name left_ptr
 ~/.config/polybar/launch.sh &
-kdeconnect-indicator &
+exec /usr/lib/kdeconnectd &
 picom &
 dunst &
 copyq &
@@ -34,6 +33,7 @@ bspc rule -a Pavucontrol state=floating follow=on
 bspc rule -a TelegramDesktop desktop='^3' follow=on  
 bspc rule -a discord desktop='^3' follow=on 
 bspc rule -a Caja desktop='^9' follow=on
+bspc rule -a Nemo desktop='^9' follow=on
 bspc rule -a firefox desktop='^1' follow=on
 bspc rule -a vlc desktop='^4' follow=on
 bspc rule -a mpv desktop='^4' follow=on

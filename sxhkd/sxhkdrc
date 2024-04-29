@@ -3,9 +3,18 @@
 #
 # Take a screenshot
 
+super + control     + Tab
+    rofi   -show window -window-thumbnail -show-icons -window-format '\{t\}' ; \
+    bspc node focused.\!above --layer normal
+
+super + {_,shift +} BackSpace
+    bspc {desktop --focus  last.local , node --to-desktop last.local --follow}
+
+super + {r,R}
+    bspc node @/ --circulate {forward,backward}
+
 super + shift + p
     zathura ~/code/php/Complete\ Modern\ PHP\ Developer\ Course\ in\ 2023/1.\ Introduction/2.1\ Modern\ PHP\ Developer\ -\ Lecture\ Notes.pdf
-
 super + shift + i
 	winhide
 super + Print
@@ -17,19 +26,21 @@ super + alt + v
 	kdeconnect-cli -d 5e476c6e_c6d0_4d18_990c_0c899e514eb6 --send-clipboard
 # NextCloud server
 super + shift + n
-	surf https://shared02.opsone-cloud.ch/
+	wifimenu
 super + n
     sudo nginx -s reload
-
+# fast soundcore pods connect/disconnect
+super + {_, shift +} b
+    bluetoothctl {connect, disconnect} F0:AE:66:C2:8C:1B
 # emoji-keyboard
 super + shift + grave
-	emoji-keyboard &
+    rofi -show emoji -modi emoji
 # Minimize apps
 super + {_,shift + }u
 	bspc {desktop -f, node -d} ^11
 # Lock Screen
 super + shift + q
-	betterlockscreen -l dimblur --show-layout 
+	betterlockscreen -l dimblur --show-layout
 # Mic Toggle
 super + shift + m
 	~/./mictoggle.sh
@@ -38,32 +49,37 @@ super + alt + b
 	firefox
 # Nemo explorer
 super + BackSpace
-	caja
+	nemo &
 # Surf Browser
 super + z
 	surf www.google.com
 # terminal emulator
 super + Return
-    alacritty -o font.size=14
-
+    alacritty -o font.size=11
 # program launcher
 super + d
 	rofi -show drun
-
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
-
 #
-#brightness up
+# Brightness
 XF86MonBrightness{Up,Down}
-	xbacklight -{inc,dec} 10
+    brightnessctl -n set {+10%, 10%-}
+
+# Audio shortcuts
 XF86Audio{Lower,Raise}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
-XF86Audio{Next,Prev,Play}
-	playerctl {next,previous,play-pause}
+XF86AudioMicMute
+    pactl set-source-mute alsa_input.pci-0000_00_1f.3.analog-stereo toggle
+shift + XF86Audio{LowerVolume,RaiseVolume,Mute}
+	playerctl {previous,next,play-pause}
+XF86Audio{Prev,Next}
+	playerctl {previous,next}
+XF86Audio{Play,Pause}
+	playerctl play-pause
 XF86Calculator
 	speedcrunch &
 XF86Tools
@@ -105,14 +121,6 @@ super + g
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# # set the node flags
-# super + ctrl + {m,x,y,z}
-# 	bspc node -g {marked,locked,sticky,private}
-
-#
-# focus/swap
-#
-
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
@@ -145,30 +153,6 @@ super + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9}
 	bspc {desktop -f,node -d} '^{1-9}'
-
-#
-# preselect
-#
-
-# # preselect the direction
-# super + ctrl + {h,j,k,l}
-# 	bspc node -p {west,south,north,east}
-#
-# # preselect the ratio
-# super + ctrl + {1-9}
-# 	bspc node -o 0.{1-9}
-#
-# # cancel the preselection for the focused node
-# super + ctrl + space
-# 	bspc node -p cancel
-#
-# # cancel the preselection for the focused desktop
-# super + ctrl + shift + space
-# 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
