@@ -1,14 +1,14 @@
 {
     "BDFDB": true,
-    "ZeresPluginLibrary": true,
-    "BetterAnimations": true,
+    "ZeresPluginLibrary": false,
+    "BetterAnimations": false,
     "BetterFolders": true,
     "CallTimeCounter": true,
     "CollapsibleUI": true,
     "FreeEmojis": true,
     "GameActivityToggle": true,
     "NotificationSounds": true,
-    "ShowAllActivities": true,
+    "ShowAllActivities": false,
     "SpotifyControls": true,
     "SpotifyListenAlong": true,
     "TypingIndicator": true

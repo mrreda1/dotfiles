@@ -2,7 +2,7 @@
  * @name GameActivityToggle
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 1.2.4
+ * @version 1.2.6
  * @description Adds a Quick-Toggle Game Activity Button
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
@@ -123,7 +123,7 @@ module.exports = (_ => {
 				};
 				
 				this.css = `
-					${BDFDB.dotCNS._gameactivitytoggleadded + BDFDB.dotCNC.accountinfowithtagasbutton + BDFDB.dotCNS._gameactivitytoggleadded + BDFDB.dotCN.accountinfowithtagless} {
+					${BDFDB.dotCNS._gameactivitytoggleadded + BDFDB.dotCN.accountinfoavatarwrapper} {
 						flex: 1;
 						min-width: 0;
 					}
@@ -223,7 +223,7 @@ module.exports = (_ => {
 			}
 			
 			processMenu (e) {
-				if (!this.settings.general.showItem || e.instance.props.navId != "account") return;
+				if (!this.settings.general.showItem || (e.instance.props.navId != "account" && e.instance.props.navId != "status")) return;
 				let [_, oldIndex] = BDFDB.ContextMenuUtils.findItem(e.instance, {id: BDFDB.ContextMenuUtils.createItemId(this.name, "activity-toggle")});
 				if (oldIndex > -1) return;
 				let [children, index] = BDFDB.ContextMenuUtils.findItem(e.instance, {id: ["custom-status", "set-custom-status", "edit-custom-status"]});

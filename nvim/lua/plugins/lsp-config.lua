@@ -20,6 +20,7 @@ return {
                 { noremap = true, silent = true, desc = "LSP -> Formatter" }
             )
             local lsp_zero = require('lsp-zero')
+            local lspconfig = require('lspconfig')
             lsp_zero.extend_lspconfig()
 
 
@@ -27,7 +28,14 @@ return {
                 lsp_zero.default_keymaps({ buffer = bufnr })
             end)
 
-            require('lspconfig').html.setup({
+            lspconfig.tsserver.setup {
+                init_options = {
+                    preferences = {
+                        disableSuggestions = true,
+                    }
+                }
+            }
+            lspconfig.html.setup({
                 filetypes = { "html", "templ", "php" },
                 init_options = {
                     configurationSection = { "html", "css", "php" },

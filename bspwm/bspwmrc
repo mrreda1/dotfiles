@@ -1,10 +1,12 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-feh --bg-fill ~/wallpapers/pc_wallpapers/rwall.png
+feh --bg-fill ~/wallpapers/wallhaven-d6y12l.jpg
 xsetroot -cursor_name left_ptr
 ~/.config/polybar/launch.sh &
-exec /usr/lib/kdeconnectd &
+# exec /usr/lib/kdeconnectd &
+kdeconnect-indicator &
+fcitx &
 picom &
 dunst &
 copyq &
@@ -32,11 +34,11 @@ bspc rule -a Gimp-2.10 desktop='^7' state=floating follow=on
 bspc rule -a Pavucontrol state=floating follow=on
 bspc rule -a TelegramDesktop desktop='^3' follow=on  
 bspc rule -a discord desktop='^3' follow=on 
-bspc rule -a Caja desktop='^9' follow=on
+# bspc rule -a Caja desktop='^9' follow=on
 bspc rule -a Nemo desktop='^9' follow=on
 bspc rule -a firefox desktop='^1' follow=on
-bspc rule -a vlc desktop='^4' follow=on
-bspc rule -a mpv desktop='^4' follow=on
+# bspc rule -a vlc desktop='^4' follow=on
+# bspc rule -a mpv desktop='^4' follow=on
 bspc rule -a 'Minecraft* 1.19.3' desktop='^8' follow=on
 bspc rule -a copyq state=floating
 bspc rule -a Brave-browser desktop='^1' follow=on

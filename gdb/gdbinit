@@ -1,1 +1,7 @@
 set debuginfod enabled off
+
+# Skip stepping into STL and system headers
+set auto-load safe-path /
+skip file /usr/include/c++/*
+skip file /usr/include/x86_64-linux-gnu/c++/*
+skip file /usr/include/c++/9/bits/*

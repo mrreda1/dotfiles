@@ -3,7 +3,8 @@
  * @author arg0NNY
  * @authorLink https://github.com/arg0NNY/DiscordPlugins
  * @invite M8DBtcZjXD
- * @version 1.1.18
+ * @donate https://donationalerts.com/r/arg0nny
+ * @version 1.1.21
  * @description Improves your whole Discord experience. Adds highly customizable switching animations between guilds, channels, etc. Introduces smooth new message reveal animations, along with popout animations, and more.
  * @website https://github.com/arg0NNY/DiscordPlugins/tree/master/BetterAnimations
  * @source https://github.com/arg0NNY/DiscordPlugins/blob/master/BetterAnimations/BetterAnimations.plugin.js
@@ -21,7 +22,7 @@ module.exports = (() => {
                     "github_username": 'arg0NNY'
                 }
             ],
-            "version": "1.1.18",
+            "version": "1.1.21",
             "description": "Improves your whole Discord experience. Adds highly customizable switching animations between guilds, channels, etc. Introduces smooth new message reveal animations, along with popout animations, and more.",
             github: "https://github.com/arg0NNY/DiscordPlugins/tree/master/BetterAnimations",
             github_raw: "https://raw.githubusercontent.com/arg0NNY/DiscordPlugins/master/BetterAnimations/BetterAnimations.plugin.js"
@@ -31,7 +32,14 @@ module.exports = (() => {
                 "type": "fixed",
                 "title": "Fixed",
                 "items": [
-                    "Fixed settings being non-interactive."
+                    "Fixed the settings being unresponsive."
+                ]
+            },
+            {
+                "type": "progress",
+                "title": "Stay tuned",
+                "items": [
+                  "Big changes are underway..."
                 ]
             }
         ]
@@ -64,8 +72,10 @@ module.exports = (() => {
     } : (([Plugin, Api]) => {
         const plugin = (Plugin, Api) => {
             const {
-                DOM
+                DOM,
+                Webpack
             } = BdApi;
+            const { Filters } = Webpack;
 
             const {
                 WebpackModules,
@@ -85,8 +95,7 @@ module.exports = (() => {
                 UserSettingsWindow,
                 GuildSettingsWindow,
                 ChannelSettingsWindow,
-                UserStore,
-                ButtonData
+                UserStore
             } = DiscordModules;
 
             function getMangled(filter) {
@@ -112,12 +121,11 @@ module.exports = (() => {
             }
 
             const Common = WebpackModules.getByProps('Shakeable', 'List');
-            const { ReferencePositionLayer, Anchor } = Common;
+            const { ReferencePositionLayer, Button } = Common;
             const ChannelIntegrationsSettingsWindow = WebpackModules.getByProps('setSection', 'saveWebhook');
             // const {PreloadedUserSettingsActionCreators} = WebpackModules.getByProps('PreloadedUserSettingsActionCreators');
-            const { Route: RouteWithImpression } = WebpackModules.getByProps('Route', 'Router');
-            const Button = ButtonData;
-            const UserPopout = WebpackModules.getModule(m => m?.type?.toString?.().includes('Unexpected missing user'), {searchExports: true});
+            const RouteWithImpression = Webpack.getModule(m => Filters.byStrings('location', 'computedMatch', 'render')(m?.prototype?.render), { searchExports: true })
+            const UserPopout = Webpack.getWithKey(Filters.byStrings('Unexpected missing user', 'originalFriendingEnabled'))
 
             function buildSelectors (selectors) {
                 const result = {};
@@ -141,35 +149,42 @@ module.exports = (() => {
             }
 
             const Selectors = buildSelectors({
-                Chat: () => WebpackModules.getByProps('chat', 'channelName'),
-                Messages: () => WebpackModules.getByProps('scroller', 'messages'),
+                Chat: () => WebpackModules.getByProps('chat', 'chatContent'),
                 Layout: () => WebpackModules.getByProps('base', 'content'),
-                ChannelsList: () => WebpackModules.getByProps('scroller', 'unread'),
+                ChannelsList: () => WebpackModules.getByProps('scroller', 'unreadTop'),
                 PeopleTab: () => WebpackModules.getByProps('container', 'peopleColumn'),
                 ApplicationStore: () => WebpackModules.getByProps('applicationStore', 'marketingHeader'),
                 PeopleList: () => WebpackModules.getByProps('peopleList', 'searchBar'),
                 FriendsActivity: () => WebpackModules.getByProps('scroller', 'header', 'container'),
-                PageContainer: () => WebpackModules.getByProps('headerBar', 'homeWrapper'),
+                PageContainer: () => WebpackModules.getByProps('scroller', 'settingsContainer'),
                 Pages: () => WebpackModules.getByProps('pageWrapper', 'searchPage'),
-                Content: () => WebpackModules.getByProps('content', 'fade'),
+                Content: () => {
+                    const module = WebpackModules.getByProps('content', 'fade')
+                    if (!module) return
+
+                    const scrollerBase = Object.values(module).find(s => s?.includes?.('scrollerBase'))
+                      ?.split(' ').find(s => s?.includes?.('scrollerBase'))
+
+                    return { scrollerBase, ...module }
+                },
                 Sidebar: [
                     () => WebpackModules.getByProps('contentRegion', 'sidebar'),
                     {
-                        contentRegion: 'contentRegion__08eba',
-                        contentRegionScroller: 'contentRegionScroller__9ae20',
-                        standardSidebarView: 'standardSidebarView__12528'
+                        contentRegion: 'contentRegion_c25c6d',
+                        contentRegionScroller: 'contentRegionScroller_c25c6d',
+                        standardSidebarView: 'standardSidebarView_c25c6d'
                     }
                 ],
                 Settings: [
                     () => ({
                         ...WebpackModules.getByProps('contentContainer', 'optionContainer'),
-                        ...WebpackModules.getByProps('messageContainer', 'colorPicker')
+                        ...WebpackModules.getByProps('messageContainer', 'scroller')
                     }),
-                    { scroller: 'scroller_bcb155', contentContainer: 'contentContainer__50662' }
+                    { scroller: 'scroller_ddb5b4', contentContainer: 'contentContainer__50662' }
                 ],
                 SettingsSidebar: [
-                    () => WebpackModules.getByProps('addRole', 'sidebar'),
-                    { sidebar: 'sidebar__37984' }
+                    () => WebpackModules.getByProps('standardSidebarView', 'sidebar'),
+                    { sidebar: 'sidebar_c25c6d' }
                 ],
                 Animations: () => WebpackModules.getByProps('translate', 'fade'),
                 Members: () => WebpackModules.getByProps('members', 'hiddenMembers'),
@@ -179,18 +194,18 @@ module.exports = (() => {
                 Popout: () => WebpackModules.getByProps('disabledPointerEvents', 'layer'),
                 ThreadSidebar: () => WebpackModules.getByProps('container', 'resizeHandle'),
                 Stickers: [
-                    () => WebpackModules.getByProps('grid', 'uploadCard'),
-                    { grid: 'grid_d33a08' }
+                    () => WebpackModules.getByProps('grid', 'placeholderCard'),
+                    { grid: 'grid_f8c5e7' }
                 ],
                 Sticker: [
                     () => WebpackModules.getByProps('stickerName', 'sticker'),
-                    { sticker: 'sticker_fd0aff', wrapper: 'wrapper_d9a30a', content: 'content__25fd1', stickerName: 'stickerName__6fab0' }
+                    { sticker: 'sticker_d864ab', wrapper: 'wrapper_d864ab', content: 'content_d864ab', stickerName: 'stickerName_d864ab' }
                 ],
                 Sizes: () => WebpackModules.getByProps('size10', 'size12'),
                 Colors: () => WebpackModules.getByProps('colorHeaderPrimary', 'colorWhite'),
                 VideoOptions: [
                     () => WebpackModules.getByProps('backgroundOptionRing'),
-                    { backgroundOptionRing: 'backgroundOptionRing__45698' }
+                    { backgroundOptionRing: 'backgroundOptionRing_ad7d79' }
                 ],
                 StudentHubs: () => WebpackModules.getByProps('footerDescription', 'scroller')
             });
@@ -251,7 +266,7 @@ module.exports = (() => {
                     "/channels/:guildId/:channelId/threads/:threadId/:messageId?"
                 ], {
                     element: `.${Selectors.Chat.chat}`,
-                    scrollers: [Selectors.Messages.scroller, DiscordClasses.MemberList.members.value, Selectors.Content.scrollerBase]
+                    scrollers: [DiscordClasses.MemberList.members.value, Selectors.Content.scrollerBase]
                 }),
                 new Route('Friends', '/channels/@me', {
                     element: `.${Selectors.PeopleTab.container}`,
@@ -1166,7 +1181,7 @@ module.exports = (() => {
                         });
                     });
 
-                    Patcher.before(UserPopout, 'type', (self, props) => {
+                    Patcher.before(...UserPopout, (self, props) => {
                         if (!popoutNode || popoutNode.children[0]?.className.includes('loadingPopout')) return;
                         animate(popoutNode.children[0], props[0].position);
 
@@ -1270,6 +1285,54 @@ module.exports = (() => {
                             /* Settings */
                             .${SETTINGS_CLASSNAME} .plugin-inputs {
                                 padding: 0 10px;
+                            }
+                            .${SETTINGS_CLASSNAME} :has(> .bd-switch) {
+                                color: var(--header-primary);
+                            }
+                            .${SETTINGS_CLASSNAME} .${Selectors.Stickers.grid} {
+                                display: grid;
+                                grid-gap: 10px;
+                                grid-template-columns: repeat(4, 1fr);
+                                grid-template-rows: 120px;
+                                grid-auto-rows: 120px;
+                            }
+                            .${SETTINGS_CLASSNAME} .${Selectors.Sticker.wrapper} {
+                                background-color: var(--background-secondary);
+                                border-radius: 8px;
+                                display: flex;
+                                padding: 12px;
+                                position: relative;
+                                transition: background-color .125s;
+                                align-items: center;
+                                flex-direction: column;
+                                justify-content: center;
+                                margin-bottom: 0;
+                                cursor: pointer;
+                            }
+                            .${SETTINGS_CLASSNAME} .${Selectors.Sticker.wrapper}:hover {
+                                background-color: var(--background-secondary-alt);
+                            }
+                            .${SETTINGS_CLASSNAME} .${Selectors.Sticker.content} {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                max-width: 108px;
+                                transition: opacity .1s;
+                            }
+                            .${SETTINGS_CLASSNAME} .${Selectors.Sticker.sticker} {
+                                display: flex;
+                                justify-content: center;
+                                width: 90px;
+                                height: 60px;
+                                margin-bottom: 15px;
+                                position: relative;
+                                border-radius: 5px;
+                                margin-right: 0;
+                                overflow: hidden;
+                            }
+                            .${SETTINGS_CLASSNAME} .${Selectors.Sticker.stickerName} {
+                                text-align: center;
+                                white-space: wrap;
                             }
                         `);
                 }
@@ -1491,13 +1554,6 @@ module.exports = (() => {
                                 'div',
                                 {
                                     className: Selectors.Sticker.sticker,
-                                    style: {
-                                        width: '90px',
-                                        height: '60px',
-                                        marginBottom: '15px',
-                                        position: 'relative',
-                                        borderRadius: '5px'
-                                    },
                                     ref: this.ref
                                 },
                                 [
@@ -1558,14 +1614,6 @@ module.exports = (() => {
                                 'div',
                                 {
                                     className: Selectors.Sticker.sticker,
-                                    style: {
-                                        width: '90px',
-                                        height: '60px',
-                                        marginBottom: '15px',
-                                        position: 'relative',
-                                        borderRadius: '5px',
-                                        overflow: 'hidden'
-                                    },
                                     ref: this.ref
                                 },
                                 [
@@ -1588,21 +1636,13 @@ module.exports = (() => {
                                     'div',
                                     {
                                         className: Selectors.Sticker.wrapper,
-                                        style: {
-                                            cursor: 'pointer'
-                                        },
                                         onClick: () => this.props.onClick(this.props.type.key)
                                     },
                                     [
                                         React.createElement(
                                             'div',
                                             {
-                                                className: Selectors.Sticker.content,
-                                                style: {
-                                                    display: 'flex',
-                                                    flexDirection: 'column',
-                                                    alignItems: 'center'
-                                                }
+                                                className: Selectors.Sticker.content
                                             },
                                             [
                                                 React.createElement(
@@ -1615,10 +1655,7 @@ module.exports = (() => {
                                                 React.createElement(
                                                     'div',
                                                     {
-                                                        className: `${Selectors.Colors.colorHeaderPrimary} ${Selectors.Sizes.size10} ${Selectors.Sticker.stickerName}`,
-                                                        style: {
-                                                            height: '12px'
-                                                        }
+                                                        className: `${Selectors.Colors.colorHeaderPrimary} ${Selectors.Sizes.size10} ${Selectors.Sticker.stickerName}`
                                                     },
                                                     this.props.type.name
                                                 )
@@ -1673,12 +1710,7 @@ module.exports = (() => {
                                 return React.createElement(
                                     'div',
                                     {
-                                        className: Selectors.Stickers.grid,
-                                        style: {
-                                            gridTemplateColumns: 'repeat(4, 1fr)',
-                                            gridTemplateRows: '120px',
-                                            gridAutoRows: '120px'
-                                        }
+                                        className: Selectors.Stickers.grid
                                     },
                                     buttons
                                 );

@@ -1,9 +1,9 @@
 {
     "currentVersionInfo": {
-        "version": "8.3.1",
+        "version": "8.4.0",
         "hasShownChangelog": true
     },
-    "cuiSettingsVersion": "12",
+    "cuiSettingsVersion": "13",
     "disableTransitions": "false",
     "transitionSpeed": "250",
     "disableToolbarCollapse": "false",
@@ -31,7 +31,6 @@
     "keyBindsEnabled": "true",
     "keyStringList": "Alt+S,Alt+C,Alt+T,Alt+W,Alt+M,Alt+U,Alt+P,Alt+I",
     "settingsButtonsMaxWidth": "100",
-    "messageBarButtonsMaxWidth": "200",
     "messageBarButtonsMinWidth": "40",
     "toolbarIconMaxWidth": "300",
     "toolbarMaxWidth": "800",
@@ -47,5 +46,6 @@
     "userAreaButtonActive": "true",
     "callContainerButtonActive": "true",
     "membersListButtonActive": "true",
-    "profilePanelButtonActive": "true"
+    "profilePanelButtonActive": "false",
+    "messageBarButtonsMaxWidth": "300"
 }

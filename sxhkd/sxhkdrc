@@ -3,18 +3,18 @@
 #
 # Take a screenshot
 
-super + control     + Tab
+super + control + Tab
     rofi   -show window -window-thumbnail -show-icons -window-format '\{t\}' ; \
     bspc node focused.\!above --layer normal
 
-super + {_,shift +} BackSpace
+super + alt + {_,shift +} BackSpace
     bspc {desktop --focus  last.local , node --to-desktop last.local --follow}
 
 super + {r,R}
     bspc node @/ --circulate {forward,backward}
 
 super + shift + p
-    zathura ~/code/php/Complete\ Modern\ PHP\ Developer\ Course\ in\ 2023/1.\ Introduction/2.1\ Modern\ PHP\ Developer\ -\ Lecture\ Notes.pdf
+    ani-cli -v --rofi
 super + shift + i
 	winhide
 super + Print
@@ -24,7 +24,7 @@ super + shift + Print
 # Send clipboard
 super + alt + v
 	kdeconnect-cli -d 5e476c6e_c6d0_4d18_990c_0c899e514eb6 --send-clipboard
-# NextCloud server
+# wifi menu
 super + shift + n
 	wifimenu
 super + n
@@ -95,8 +95,8 @@ XF86Explorer
 super + alt + {q,r}
 	bspc {quit,wm -r}
 # poweroff
-super + {_,shift + } End
-	sudo {poweroff,reboot}
+super + {_,shift + ,alt + } End
+	sudo {poweroff, reboot, systemctl hibernate}
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
