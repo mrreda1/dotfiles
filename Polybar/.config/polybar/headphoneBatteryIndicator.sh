@@ -1,11 +1,10 @@
 #!/bin/bash
-# gobbl package needed
 
-headphone='soundcore'
-command=$(gobbl | grep -m 1 $headphone | awk '{print $NF}')
+headphone=$(upower -e | grep headset)
+command=$(upower -i "$headphone" | grep percentage | awk '{print $NF}')
 
-if [ $command ]; then
-    echo $command;
+if [ "$headphone" ]; then
+    echo "$command"
 else
-    echo "x";
+    echo "x"
 fi
