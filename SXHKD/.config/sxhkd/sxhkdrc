@@ -41,9 +41,6 @@ super + {_,shift + }u
 # Lock Screen
 super + shift + q
 	betterlockscreen -l dimblur --show-layout
-# Mic Toggle
-super + shift + m
-	~/./mictoggle.sh
 # Browser
 super + alt + b
 	firefox
@@ -55,7 +52,7 @@ super + z
 	surf www.google.com
 # terminal emulator
 super + Return
-    alacritty -o font.size=11
+    alacritty
 # program launcher
 super + d
 	rofi -show drun
