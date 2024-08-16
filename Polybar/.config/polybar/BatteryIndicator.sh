@@ -18,6 +18,4 @@ if [ "$headphone" ]; then
     echo -n " $command"
 fi
 
-if [ ! "$phone" ] && [ ! "$headphone" ]; then
-    echo "";
-fi
+echo ""

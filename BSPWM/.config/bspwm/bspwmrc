@@ -11,7 +11,7 @@ copyq &
 
 redshift -P -m randr -l 30:31.2 -t 6500:5000 &
 
-bspc monitor -d       
+bspc monitor -d         
 
 bspc config border_width 2
 bspc config window_gap 10
@@ -30,7 +30,7 @@ bspc rule -a obsidian desktop='^6' follow=on
 bspc rule -a Pavucontrol state=floating follow=on
 bspc rule -a TelegramDesktop desktop='^3' follow=on
 bspc rule -a discord desktop='^3' follow=on
-bspc rule -a Nemo desktop='^7' follow=on
+bspc rule -a Nemo desktop='^9' follow=on
 bspc rule -a firefox desktop='^1' follow=on
 bspc rule -a copyq state=floating
 bspc rule -a qBittorrent state=floating desktop='^6' follow=on
