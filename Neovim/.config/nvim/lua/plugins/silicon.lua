@@ -16,7 +16,7 @@ return {
 			end,
 			to_clipboard = true,
 			window_title = function()
-				return " JAMmIKA1 - "
+				return " mrreda1 - "
 					.. vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
 			end,
 			output = function()
