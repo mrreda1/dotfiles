@@ -9,6 +9,9 @@ return {
         "neovim/nvim-lspconfig",
     },
     {
+        "j-hui/fidget.nvim"
+    },
+    {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         config = function()
@@ -21,6 +24,7 @@ return {
             )
             local lsp_zero = require('lsp-zero')
             local lspconfig = require('lspconfig')
+            require('fidget').setup()
             lsp_zero.extend_lspconfig()
 
 
@@ -28,13 +32,6 @@ return {
                 lsp_zero.default_keymaps({ buffer = bufnr })
             end)
 
-            lspconfig.tsserver.setup {
-                init_options = {
-                    preferences = {
-                        disableSuggestions = true,
-                    }
-                }
-            }
             lspconfig.html.setup({
                 filetypes = { "html", "templ", "php" },
                 init_options = {
