@@ -368,6 +368,78 @@
 				"sound": "---",
 				"streamMute": false,
 				"volume": 100
+			},
+			"winter_call_calling": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"winter_call_ringing": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"winter_deafen": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"winter_disconnect": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"winter_mute": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"winter_undeafen": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"winter_unmute": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"winter_user_join": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
+			},
+			"winter_user_leave": {
+				"category": "---",
+				"invisibleMute": false,
+				"mute": false,
+				"sound": "---",
+				"streamMute": false,
+				"volume": 100
 			}
 		},
 		"volumes": {

@@ -1,20 +1,20 @@
 #! /bin/sh
 
 pgrep -x sxhkd >/dev/null || sxhkd &
-feh --bg-fill ~/wallpapers/wallhaven-d6y12l.jpg
+feh --bg-fill ~/wallpapers/wallhaven-mlq37m_1920x1080.png
 xsetroot -cursor_name left_ptr
 ~/.config/polybar/launch.sh &
 kdeconnect-indicator &
-picom &
+picom --animations -b &
 dunst &
 copyq &
 
-redshift -P -m randr -l 30:31.2 -t 6500:5000 &
+redshift -P -m randr -l 30:31.2 -t 6500:3500 &
 
 bspc monitor -d         
 
 bspc config border_width 2
-bspc config window_gap 10
+bspc config window_gap 8
 
 bspc config split_ratio 0.5
 bspc config borderless_monocle false
@@ -32,6 +32,7 @@ bspc rule -a TelegramDesktop desktop='^3' follow=on
 bspc rule -a discord desktop='^3' follow=on
 bspc rule -a Nemo desktop='^9' follow=on
 bspc rule -a firefox desktop='^1' follow=on
+bspc rule -a zen desktop='^1' follow=on
 bspc rule -a copyq state=floating
 bspc rule -a qBittorrent state=floating desktop='^6' follow=on
 bspc rule -a okular desktop='^6' follow=on
@@ -39,3 +40,5 @@ bspc rule -a 'ONLYOFFICE Desktop Editors' desktop='^6' follow=on
 bspc rule -a 'SimpleScreenRecorder' desktop='^6' follow=on state=floating
 bspc rule -a 'Zathura' state=tiled
 bspc rule -a 'Spotify' desktop='^5' follow=on
+bspc rule -a 'Tic Tac Toe' state=floating
+

@@ -1,8 +1,5 @@
 return {
     {
-        "RRethy/vim-illuminate",
-    },
-    {
         "nvimdev/hlsearch.nvim",
         event = "BufRead",
         config = function()

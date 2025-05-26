@@ -3,6 +3,12 @@
 #
 # Take a screenshot
 
+super + 0
+    find-cursor --repeat 0 --follow --distance 0 --line-width 10 --size 10 --color blue
+super + alt + 0
+    killall find-cursor
+super + )
+    killall find-cursor
 super + control + Tab
     rofi   -show window -window-thumbnail -show-icons -window-format '\{t\}' ; \
     bspc node focused.\!above --layer normal
@@ -13,6 +19,8 @@ super + alt + {_,shift +} BackSpace
 super + {r,R}
     bspc node @/ --circulate {forward,backward}
 
+super + shift + e
+    notify-send "Translation" "$(xclip -o | trans -b :ar | rev)"
 super + shift + p
     ani-cli -v --rofi
 super + shift + i
@@ -30,13 +38,16 @@ super + shift + n
 super + n
     sudo nginx -s reload
 # fast soundcore pods connect/disconnect
-super + {_, shift +} b
-    bluetoothctl {connect, disconnect} F0:AE:66:C2:8C:1B
+super + b
+    bluetoothctl connect $PODSMAC
+super + shift + b
+    playerctl pause > /dev/null 2>&1 & bluetoothctl disconnect $PODSMAC
+# emoji-keyboard
 # emoji-keyboard
 super + shift + grave
     rofi -show emoji -modi emoji
 # Minimize apps
-super + {_,shift + }u
+super + {_,shift + } u
 	bspc {desktop -f, node -d} ^11
 # Lock Screen
 super + shift + q

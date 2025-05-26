@@ -1,14 +1,12 @@
 {
-    "BDFDB": true,
-    "ZeresPluginLibrary": true,
-    "BetterAnimations": true,
-    "BetterFolders": true,
-    "CallTimeCounter": true,
-    "FreeEmojis": true,
+    "BDFDB": false,
+    "ZeresPluginLibrary": false,
+    "BetterAnimations": false,
+    "BetterFolders": false,
+    "CallTimeCounter": false,
+    "FreeEmojis": false,
     "GameActivityToggle": true,
-    "NotificationSounds": true,
-    "ShowAllActivities": false,
-    "SpotifyControls": true,
+    "LaTeX Renderer": false,
     "SpotifyListenAlong": false,
-    "TypingIndicator": true
+    "TypingIndicator": false
 }
