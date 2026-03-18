@@ -1,15 +1,17 @@
 #! /bin/sh
 
 pgrep -x sxhkd >/dev/null || sxhkd &
-feh --bg-fill ~/wallpapers/wallhaven-mlq37m_1920x1080.png
+# feh --bg-fill ~/wallpapers/wallhaven-we6zrr.jpg
+feh --bg-fill ~/wallpapers/minimal/od_error.png
 xsetroot -cursor_name left_ptr
 ~/.config/polybar/launch.sh &
 kdeconnect-indicator &
-picom --animations -b &
+# picom --animations -b &
+picom &
 dunst &
 copyq &
 
-redshift -P -m randr -l 30:31.2 -t 6500:3500 &
+# redshift -P -m randr -l 30:31.2 -t 6500:3500 &
 
 bspc monitor -d         
 
